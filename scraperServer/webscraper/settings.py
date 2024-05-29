@@ -51,7 +51,7 @@ ROBOTSTXT_OBEY = True
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    'scrapy.downloader.middleware.httpproxy.HTTPProxyMiddleware': 1,
+    # 'scrapy.downloader.middleware.httpproxy.HTTPProxyMiddleware': 1,
    "webscraper.middlewares.WebscraperDownloaderMiddleware": 543,
 }
 
@@ -92,3 +92,5 @@ DOWNLOADER_MIDDLEWARES = {
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+ITEM_PIPELINES = {"webscraper.pipelines.BooknamePipeline": 300,
+}

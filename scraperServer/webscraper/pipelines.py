@@ -8,6 +8,11 @@
 from itemadapter import ItemAdapter
 
 
-class WebscraperPipeline:
+# class WebscraperPipeline:
+#     def process_item(self, item, spider):
+#         return item
+    
+class BooknamePipeline(object):
     def process_item(self, item, spider):
+        item.save()
         return item
