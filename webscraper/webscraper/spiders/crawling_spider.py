@@ -13,7 +13,6 @@ class CrawlingSpider(CrawlSpider):
         Rule(LinkExtractor(allow=r'catalogue', deny='category'), callback='parse_item'),
     )
     
-    
     def parse_item(self, response):
         yield{        
             'title': response.css('.product_main h1::text').get(),
